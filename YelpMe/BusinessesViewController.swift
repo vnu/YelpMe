@@ -11,52 +11,52 @@ import UIKit
 class BusinessesViewController: UIViewController {
 
     var businesses: [Business]!
+    var searchBar:UISearchBar!
     
     let businessViewCellId = "com.vnu.BusinessViewCell"
     
     @IBOutlet var searchTableView: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+       super.viewDidLoad()
        loadBusinesses()
-
-/* Example of Yelp search with more search options specified
-        Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
-            self.businesses = businesses
-            
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
-        }
-*/
+       setupSearchBar()
     }
-    func loadBusinesses(){
-        YelpAPI.sharedInstance.searchWithTerm("Indian", completion: { (businesses: [Business]!, error: NSError!) -> Void in
+    
+    func setupSearchBar(){
+        searchBar = UISearchBar()
+        searchBar?.sizeToFit()
+        navigationItem.titleView = searchBar
+        searchBar.delegate = self
+    }
+
+    func loadBusinesses(searchText: String = "Restaurants"){
+        YelpAPI.sharedInstance.searchWithTerm(searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
-//            for business in businesses {
-//                print(business.categories!)
-//            }
             self.searchTableView.reloadData()
         })
 
     }
 
+    func searchBusinesses(searchText: String, categories: [String] = []){
+        YelpAPI.sharedInstance.searchWithTerm(searchText, sort: .Distance, categories: categories, deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            self.searchTableView.reloadData()
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension BusinessesViewController:UISearchBarDelegate{
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty{
+            loadBusinesses(searchText)
+        }
     }
-    */
 
 }
 
@@ -64,7 +64,7 @@ extension BusinessesViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.businesses != nil ? self.businesses.count : 0
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(businessViewCellId) as! BusinessTableViewCell
         cell.business = businesses[indexPath.row]

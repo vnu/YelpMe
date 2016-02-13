@@ -60,5 +60,26 @@ class Business: NSObject{
         return businesses
     }
     
+    class func printAll(businesses: [Business]){
+        for business in businesses{
+            print(business)
+        }
+    }
+    
+    // Creates a text representation
+    override var description: String {
+        return "\n\n\n\t Name: \(self.name!)" +
+        "\n\t rating: \(self.rating!)" +
+        "\n\t reviewCount: \(self.reviewCount!)" +
+        "\n\t categories: \(self.categories!)" +
+        "\n\t phone: \(self.phone!)" +
+        "\n\t imageUrl: \(self.imageUrl!)" +
+        "\n\t businessId: \(self.businessId!)" +
+        "\n\t isClosed: \(self.isClosed!)" +
+        "\n\t distance: \(self.distance!)" +
+        "\n\t location: \(self.location!)"
+
+    }
+    
     
 }

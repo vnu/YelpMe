@@ -32,7 +32,7 @@ import UIKit
 //        "state_code": "CA"
 //    }
 
-class BusinessLocation {
+class BusinessLocation: NSObject {
     let crossStreets: String?
     let city: String?
     let displayAddress: String?
@@ -90,5 +90,21 @@ class BusinessLocation {
         self.latitude = lat
         self.longitude = lng
     }
+    
+    // Creates a text representation
+    override var description: String {
+        return "\n\t\t city: \(self.city!)" +
+//            "\n\t\t crossStreets: \(self.crossStreets!)" +
+            "\n\t\t displayAddress: \(self.displayAddress!)" +
+            "\n\t\t geoAccuracy: \(self.geoAccuracy!)" +
+            "\n\t\t neighborhoods: \(self.neighborhoods!)" +
+            "\n\t\t postalCode: \(self.postalCode!)" +
+            "\n\t\t countryCode: \(self.countryCode!)" +
+            "\n\t\t address: \(self.address!)" +
+            "\n\t\t latitude: \(self.latitude!)" +
+            "\n\t\t longitude: \(self.longitude!)" +
+            "\n\t\t statecpde: \(self.stateCode!)"
+    }
+
     
 }
