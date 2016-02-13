@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		107556E52FDEBCE7C708C827 /* Pods_YelpMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEEB38B1B7B3251B17AF6C7 /* Pods_YelpMe.framework */; };
 		E4E10AB71C6D714800DB6CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10AB61C6D714800DB6CCE /* AppDelegate.swift */; };
-		E4E10AB91C6D714800DB6CCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10AB81C6D714800DB6CCE /* ViewController.swift */; };
+		E4E10AB91C6D714800DB6CCE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10AB81C6D714800DB6CCE /* SearchViewController.swift */; };
 		E4E10ABC1C6D714800DB6CCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E10ABA1C6D714800DB6CCE /* Main.storyboard */; };
 		E4E10ABF1C6D714800DB6CCE /* YelpMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4E10ABD1C6D714800DB6CCE /* YelpMe.xcdatamodeld */; };
 		E4E10AC11C6D714800DB6CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E10AC01C6D714800DB6CCE /* Assets.xcassets */; };
 		E4E10AC41C6D714800DB6CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E10AC21C6D714800DB6CCE /* LaunchScreen.storyboard */; };
+		E4E10AD21C6EAD2E00DB6CCE /* YelpMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10AD11C6EAD2E00DB6CCE /* YelpMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +22,13 @@
 		6A28627C15A038A6D55402D6 /* Pods-YelpMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-YelpMe/Pods-YelpMe.release.xcconfig"; sourceTree = "<group>"; };
 		E4E10AB31C6D714800DB6CCE /* YelpMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E10AB61C6D714800DB6CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E4E10AB81C6D714800DB6CCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4E10AB81C6D714800DB6CCE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E4E10ABB1C6D714800DB6CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4E10ABE1C6D714800DB6CCE /* YelpMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YelpMe.xcdatamodel; sourceTree = "<group>"; };
 		E4E10AC01C6D714800DB6CCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4E10AC31C6D714800DB6CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4E10AC51C6D714800DB6CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4E10AD11C6EAD2E00DB6CCE /* YelpMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpMeViewController.swift; sourceTree = "<group>"; };
 		EEEEFAC152606430BC6C62B0 /* Pods-YelpMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YelpMe/Pods-YelpMe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +98,8 @@
 		E4E10ACB1C6D767200DB6CCE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E4E10AB81C6D714800DB6CCE /* ViewController.swift */,
+				E4E10AD11C6EAD2E00DB6CCE /* YelpMeViewController.swift */,
+				E4E10AB81C6D714800DB6CCE /* SearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,7 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E10AB91C6D714800DB6CCE /* ViewController.swift in Sources */,
+				E4E10AD21C6EAD2E00DB6CCE /* YelpMeViewController.swift in Sources */,
+				E4E10AB91C6D714800DB6CCE /* SearchViewController.swift in Sources */,
 				E4E10ABF1C6D714800DB6CCE /* YelpMe.xcdatamodeld in Sources */,
 				E4E10AB71C6D714800DB6CCE /* AppDelegate.swift in Sources */,
 			);
