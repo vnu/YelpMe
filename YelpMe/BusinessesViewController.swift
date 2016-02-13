@@ -35,9 +35,9 @@ class BusinessesViewController: UIViewController {
     func loadBusinesses(){
         YelpAPI.sharedInstance.searchWithTerm("Indian", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
-            for business in businesses {
-                print(business.categories!)
-            }
+//            for business in businesses {
+//                print(business.categories!)
+//            }
             self.searchTableView.reloadData()
         })
 

@@ -64,10 +64,9 @@ class HTTPClient: BDBOAuth1RequestOperationManager{
             parameters["deals_filter"] = deals!
         }
         
-        print(parameters)
+//        print(parameters)
         
         return self.GET("search", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            print(response)
             let dictionaries = response["businesses"] as? [NSDictionary]
             if dictionaries != nil {
                 completion(Business.businesses(array: dictionaries!), nil)
