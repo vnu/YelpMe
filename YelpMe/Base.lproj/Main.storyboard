@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzR-aS-kRd" id="RR2-9e-hL4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yelpsquared" translatesAutoresizingMaskIntoConstraints="NO" id="fGV-cz-dv0">
@@ -30,13 +30,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgr-bg-Api">
-                                            <rect key="frame" x="116" y="13" width="476" height="18"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                            <rect key="frame" x="116" y="13" width="476" height="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars-5.0" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-Xh-78p">
-                                            <rect key="frame" x="116" y="34" width="103" height="19"/>
+                                            <rect key="frame" x="116" y="33" width="103" height="19"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYh-Ki-SZy">
                                             <rect key="frame" x="222" y="36" width="36" height="15"/>
@@ -44,33 +44,58 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grd-JK-lRp">
+                                            <rect key="frame" x="561" y="36" width="31" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxQ-8C-zfP">
+                                            <rect key="frame" x="261" y="36" width="43" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-si-w6n">
-                                            <rect key="frame" x="116" y="56" width="54" height="15"/>
+                                            <rect key="frame" x="116" y="55" width="54" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potrero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JES-Pk-eWa">
-                                            <rect key="frame" x="116" y="73" width="42" height="15"/>
+                                            <rect key="frame" x="116" y="73" width="42" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location1" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-bX-4ny">
+                                            <rect key="frame" x="548" y="38" width="8" height="8"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="8" id="DNv-Rt-bAf"/>
+                                                <constraint firstAttribute="height" constant="8" id="uRC-GH-nHW"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="cxQ-8C-zfP" firstAttribute="centerY" secondItem="cyn-Xh-78p" secondAttribute="centerY" id="4uK-aa-cq3"/>
+                                        <constraint firstItem="Grd-JK-lRp" firstAttribute="centerY" secondItem="cyn-Xh-78p" secondAttribute="centerY" id="Hdk-Sx-b8M"/>
                                         <constraint firstItem="JES-Pk-eWa" firstAttribute="top" secondItem="1HG-si-w6n" secondAttribute="bottom" constant="3" id="JHs-oA-K9y"/>
                                         <constraint firstItem="Fgr-bg-Api" firstAttribute="top" secondItem="RR2-9e-hL4" secondAttribute="topMargin" constant="5" id="PwL-Vc-mJE"/>
+                                        <constraint firstItem="SYh-Ki-SZy" firstAttribute="centerY" secondItem="cyn-Xh-78p" secondAttribute="centerY" id="Q5w-Jd-M5V"/>
+                                        <constraint firstItem="ejh-bX-4ny" firstAttribute="centerY" secondItem="cyn-Xh-78p" secondAttribute="centerY" id="Qj8-4j-SQM"/>
                                         <constraint firstItem="Fgr-bg-Api" firstAttribute="leading" secondItem="fGV-cz-dv0" secondAttribute="trailing" constant="8" id="R6S-oM-AuA"/>
                                         <constraint firstItem="fGV-cz-dv0" firstAttribute="leading" secondItem="RR2-9e-hL4" secondAttribute="leadingMargin" id="W1P-LP-FYT"/>
                                         <constraint firstItem="1HG-si-w6n" firstAttribute="top" secondItem="cyn-Xh-78p" secondAttribute="bottom" constant="3" id="eat-yn-tKY"/>
                                         <constraint firstItem="SYh-Ki-SZy" firstAttribute="leading" secondItem="cyn-Xh-78p" secondAttribute="trailing" constant="3" id="f9e-x9-uhN"/>
+                                        <constraint firstItem="cxQ-8C-zfP" firstAttribute="leading" secondItem="SYh-Ki-SZy" secondAttribute="trailing" constant="3" id="fDB-in-XfZ"/>
+                                        <constraint firstItem="Grd-JK-lRp" firstAttribute="leading" secondItem="ejh-bX-4ny" secondAttribute="trailing" constant="5" id="gSg-P3-5Dg"/>
                                         <constraint firstItem="JES-Pk-eWa" firstAttribute="leading" secondItem="Fgr-bg-Api" secondAttribute="leading" id="gd6-di-NAc"/>
                                         <constraint firstItem="1HG-si-w6n" firstAttribute="leading" secondItem="Fgr-bg-Api" secondAttribute="leading" id="h24-D9-u9g"/>
                                         <constraint firstItem="Fgr-bg-Api" firstAttribute="trailing" secondItem="RR2-9e-hL4" secondAttribute="trailingMargin" id="kM6-FG-haT"/>
                                         <constraint firstItem="cyn-Xh-78p" firstAttribute="leading" secondItem="Fgr-bg-Api" secondAttribute="leading" id="tDD-WU-vXB"/>
                                         <constraint firstItem="cyn-Xh-78p" firstAttribute="top" secondItem="Fgr-bg-Api" secondAttribute="bottom" constant="3" id="vZM-NT-mnJ"/>
                                         <constraint firstItem="fGV-cz-dv0" firstAttribute="top" secondItem="RR2-9e-hL4" secondAttribute="topMargin" id="w9r-lO-X8o"/>
-                                        <constraint firstItem="SYh-Ki-SZy" firstAttribute="centerY" secondItem="cyn-Xh-78p" secondAttribute="centerY" id="wad-dY-MBd"/>
+                                        <constraint firstItem="Grd-JK-lRp" firstAttribute="trailing" secondItem="RR2-9e-hL4" secondAttribute="trailingMargin" id="zzZ-uZ-l2K"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -78,6 +103,7 @@
                                     <outlet property="businessImageView" destination="fGV-cz-dv0" id="uT2-qL-lS5"/>
                                     <outlet property="businessNameLabel" destination="Fgr-bg-Api" id="xLH-4M-SCT"/>
                                     <outlet property="categoriesLabel" destination="1HG-si-w6n" id="4rQ-5L-Gt8"/>
+                                    <outlet property="distanceLabel" destination="Grd-JK-lRp" id="XvE-8o-HTX"/>
                                     <outlet property="ratingsImageView" destination="cyn-Xh-78p" id="6jt-BW-MBS"/>
                                     <outlet property="reviewCountLabel" destination="SYh-Ki-SZy" id="2yK-7D-X9a"/>
                                 </connections>
@@ -135,6 +161,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location1" width="16" height="16"/>
         <image name="stars-5.0" width="103" height="19"/>
         <image name="yelpsquared" width="240" height="194"/>
     </resources>

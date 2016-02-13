@@ -2,8 +2,8 @@
 //  HTTPClient.swift
 //  YelpMe
 //
-//  Created by Vinu Charanya on 2/13/16.
-//  Copyright © 2016 Timothy Lee. All rights reserved.
+//  Created by Vinu Charanya on 2/10/16.
+//  Copyright © 2016 vnu. All rights reserved.
 //
 let yelpConsumerKey = "3O_QAfnr7VV-oLljo6KiBQ"
 let yelpConsumerSecret = "qv6Rro07E2zmfHFbYZhd64TCbfc"
@@ -67,6 +67,7 @@ class HTTPClient: BDBOAuth1RequestOperationManager{
         print(parameters)
         
         return self.GET("search", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            print(response)
             let dictionaries = response["businesses"] as? [NSDictionary]
             if dictionaries != nil {
                 completion(Business.businesses(array: dictionaries!), nil)

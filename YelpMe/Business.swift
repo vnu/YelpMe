@@ -2,7 +2,7 @@
 //  YelpResult.swift
 //  YelpMe
 //
-//  Created by Vinu Charanya on 2/12/16.
+//  Created by Vinu Charanya on 2/10/16.
 //  Copyright © 2016 vnu. All rights reserved.
 //
 
@@ -19,6 +19,7 @@ class Business: NSObject{
     let businessId: String?
     let isClosed: Bool?
     let location: BusinessLocation?
+    let distance: String?
     
     init(dictionary: NSDictionary){
         self.rating = dictionary["rating"] as? Double
@@ -41,6 +42,13 @@ class Business: NSObject{
             }
         }
         self.categories = categories
+        
+        if let distanceMeters = dictionary["distance"] as? Double {
+            let milesPerMeter = 0.000621371
+            distance = String(format: "%.2f mi", milesPerMeter * distanceMeters)
+        } else {
+            distance = nil
+        }
     }
     
     class func businesses(array array: [NSDictionary]) -> [Business] {
