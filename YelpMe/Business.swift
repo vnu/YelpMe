@@ -10,7 +10,7 @@ import UIKit
 
 class Business: NSObject{
     
-    let rating: String?
+    let rating: Double?
     let reviewCount: Int?
     let name: String?
     let categories:String?
@@ -21,19 +21,23 @@ class Business: NSObject{
     let location: BusinessLocation?
     
     init(dictionary: NSDictionary){
-        self.rating = dictionary["rating"] as? String
+        self.rating = dictionary["rating"] as? Double
         self.reviewCount = dictionary["review_count"] as? Int
         self.name = dictionary["name"] as? String
         self.phone = dictionary["phone"] as? String
-        self.imageUrl = dictionary["imageUrl"] as? String
+        self.imageUrl = dictionary["image_url"] as? String
         self.businessId = dictionary["id"] as? String
         self.isClosed = dictionary["is_closed"] as? Bool
         self.location = BusinessLocation(dictionary: dictionary["location"] as! NSDictionary)
         
         var categories = ""
-        if let categoriesArray = dictionary["categories"] as? Array<String> {
+        if let categoriesArray = dictionary["categories"] as? [[String]] {
             if categoriesArray.count > 0{
-                categories = categoriesArray.joinWithSeparator(", ")
+                var categoryNames = [String]()
+                for category in categoriesArray{
+                    categoryNames.append(category[0])
+                }
+                categories = categoryNames.joinWithSeparator(", ")
             }
         }
         self.categories = categories

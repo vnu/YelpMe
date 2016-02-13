@@ -12,6 +12,10 @@ class BusinessesViewController: UIViewController {
 
     var businesses: [Business]!
     
+    let businessViewCellId = "com.vnu.BusinessViewCell"
+    
+    @IBOutlet var searchTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,8 +36,9 @@ class BusinessesViewController: UIViewController {
         YelpAPI.sharedInstance.searchWithTerm("Indian", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             for business in businesses {
-                print(business.name!)
+                print(business.categories!)
             }
+            self.searchTableView.reloadData()
         })
 
     }
@@ -53,4 +58,31 @@ class BusinessesViewController: UIViewController {
     }
     */
 
+}
+
+extension BusinessesViewController: UITableViewDataSource, UITableViewDelegate{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.businesses != nil ? self.businesses.count : 0
+        //        if let businesses = self.businesses{
+        //            return businesses.count
+        //        }else{
+        //           return 0
+        //        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(businessViewCellId) as! BusinessTableViewCell
+        let business = businesses[indexPath.row]
+        cell.selectionStyle = .None
+        cell.businessNameLabel.text = business.name!
+        cell.reviewCountLabel.text = "\(business.reviewCount!)"
+        cell.categoriesLabel.text = business.categories!
+        cell.addressLabel.text = business.location?.address
+        print("stars-\(business.rating!)")
+        cell.ratingsImageView.image = UIImage(named: "stars-\(business.rating!)")
+        if let businessImage = business.imageUrl{
+            cell.businessImageView.setImageWithURL(NSURL(string: businessImage)!)
+        }
+        return cell
+    }
 }
