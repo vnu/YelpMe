@@ -11,6 +11,7 @@ import UIKit
 class BusinessesViewController: UIViewController {
 
     var businesses: [Business]!
+    var searchBar:UISearchBar!
     
     let businessViewCellId = "com.vnu.BusinessViewCell"
     
@@ -19,20 +20,27 @@ class BusinessesViewController: UIViewController {
     override func viewDidLoad() {
        super.viewDidLoad()
        loadBusinesses()
+       setupSearchBar()
     }
-    func loadBusinesses(){
-        YelpAPI.sharedInstance.searchWithTerm("Indian", completion: { (businesses: [Business]!, error: NSError!) -> Void in
+    
+    func setupSearchBar(){
+        searchBar = UISearchBar()
+        searchBar?.sizeToFit()
+        navigationItem.titleView = searchBar
+        searchBar.delegate = self
+    }
+
+    func loadBusinesses(searchText: String = "Restaurants"){
+        YelpAPI.sharedInstance.searchWithTerm(searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
-            Business.printAll(businesses)
             self.searchTableView.reloadData()
         })
 
     }
-    
-    func searchBusinesses(){
-        YelpAPI.sharedInstance.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
+
+    func searchBusinesses(searchText: String, categories: [String] = []){
+        YelpAPI.sharedInstance.searchWithTerm(searchText, sort: .Distance, categories: categories, deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
-            Business.printAll(businesses)
             self.searchTableView.reloadData()
         }
     }
@@ -43,11 +51,20 @@ class BusinessesViewController: UIViewController {
 
 }
 
+extension BusinessesViewController:UISearchBarDelegate{
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty{
+            loadBusinesses(searchText)
+        }
+    }
+
+}
+
 extension BusinessesViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.businesses != nil ? self.businesses.count : 0
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(businessViewCellId) as! BusinessTableViewCell
         cell.business = businesses[indexPath.row]
