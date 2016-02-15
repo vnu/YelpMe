@@ -18,7 +18,8 @@ class Filters{
         filterSections["Categories"] = self.yelpCategories()
         filterSections["Sort"] = yelpSortBy()
         filterSections["Distance"] = yelpDistance()
-        sectionTitles = ["Sort","Distance","Categories"]
+        filterSections["Deals"] = [["name": "Deals On", "code": "false"]]
+        sectionTitles = ["Deals","Sort","Distance","Categories"]
         
     }
     

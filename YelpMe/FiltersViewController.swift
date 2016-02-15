@@ -46,10 +46,8 @@ class FiltersViewController: UIViewController {
         
         var chosenFilters = [String: AnyObject]()
         
-        var selectedCategories = [String]()
-        
-        
         for(currentSection, currentFilter) in filterSwitchStates{
+            var selectedCategories = [String]()
             let sectionTitle = filters.sectionTitles[currentSection]
             let  filterSection = filters.sectionAtIndex(currentSection)
 
@@ -63,8 +61,26 @@ class FiltersViewController: UIViewController {
         }
         print(chosenFilters)
         delegate?.filtersViewController?(self, didUpdateFilters: chosenFilters)
-
-     
+    }
+    
+    
+    func saveSwitchState(section: Int, row: Int, value: Bool){
+        if filterSwitchStates[section] != nil{
+            var cellSwitchState = filterSwitchStates[section]
+            cellSwitchState![row] = value
+            filterSwitchStates[section] = cellSwitchState
+        }else{
+            var cellSwitchState = [Int: Bool]()
+            cellSwitchState[row] = value
+            filterSwitchStates[section] = cellSwitchState
+        }
+    }
+    
+    func saveRadioState(section: Int, row: Int){
+        filterSwitchStates[section] = nil
+        var cellSwitchState = [Int: Bool]()
+        cellSwitchState[row] = true
+        filterSwitchStates[section] = cellSwitchState
     }
 
     
@@ -103,17 +119,26 @@ extension FiltersViewController:UITableViewDataSource, UITableViewDelegate, Filt
         return filters.sectionAtIndex(section).count
     }
     
+    func switchOffOthers(section: Int, exceptRow: Int){
+        let rows = filters.sectionAtIndex(section).count
+        saveRadioState(section, row: exceptRow)
+        for row in 0..<rows{
+            if(row != exceptRow){
+                let indexPath =  NSIndexPath(forRow: row, inSection: section)
+                let cell = filtersTableView.cellForRowAtIndexPath(indexPath) as! FilterTableViewCell
+                cell.filterOnSwitch.setOn(false, animated: true)
+            }
+        }
+    }
+    
+    
+    //When switch tapped
     func filterTableViewCell(filterTableViewCell: FilterTableViewCell, didChangeValue value: Bool) {
         let indexPath = filtersTableView.indexPathForCell(filterTableViewCell)!
-        if filterSwitchStates[indexPath.section] != nil{
-            var cellSwitchState = filterSwitchStates[indexPath.section]
-            cellSwitchState![indexPath.row] = value
-            filterSwitchStates[indexPath.section] = cellSwitchState
-        }else{
-            var cellSwitchState = [Int: Bool]()
-            cellSwitchState[indexPath.row] = value
-            filterSwitchStates[indexPath.section] = cellSwitchState
+        if [0,1,2].contains(indexPath.section){
+            switchOffOthers(indexPath.section, exceptRow: indexPath.row)
         }
+        saveSwitchState(indexPath.section, row: indexPath.row, value: value)
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

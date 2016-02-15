@@ -38,14 +38,6 @@ class BusinessesViewController: UIViewController {
 
     }
 
-    func searchBusinesses(searchText: String = "Restaurants", categories: [String]? = []){
-        YelpAPI.sharedInstance.searchWithTerm(searchText, sort: .Distance, categories: categories, deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
-            self.businesses = businesses
-            self.searchTableView.reloadData()
-        }
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -62,7 +54,22 @@ extension BusinessesViewController:FiltersViewControllerDelegate{
     
     func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : AnyObject]) {
         let categories = filters["Categories"] as? [String]
-        searchBusinesses(categories: categories)
+        var sort = "0"
+        var distance = "1609"
+        var deals = false
+        if let sortFilter = filters["Sort"] as? [String]{
+            sort = sortFilter[0]
+        }
+        if let distanceFilter = filters["Distance"] as? [String]{
+            distance = distanceFilter[0]
+        }
+        if let _ = filters["Deals"]{
+            deals = true
+        }
+        YelpAPI.sharedInstance.searchWithTerm("Restaurants", sort: sort, categories: categories, deals: deals, distance: distance) { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            self.searchTableView.reloadData()
+        }
     }
     
 }
