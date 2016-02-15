@@ -19,6 +19,9 @@
 		E4E10B0F1C6FA5C700DB6CCE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10B0E1C6FA5C700DB6CCE /* HTTPClient.swift */; };
 		E4E10B111C6FA5D200DB6CCE /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10B101C6FA5D200DB6CCE /* YelpAPI.swift */; };
 		E4E10B131C6FB02F00DB6CCE /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10B121C6FB02F00DB6CCE /* BusinessTableViewCell.swift */; };
+		E4E10B171C70449F00DB6CCE /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10B161C70449F00DB6CCE /* FiltersViewController.swift */; };
+		E4E10B191C7046F600DB6CCE /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10B181C7046F600DB6CCE /* FilterTableViewCell.swift */; };
+		E4E10B1B1C710FE900DB6CCE /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E10B1A1C710FE900DB6CCE /* Filters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		E4E10B0E1C6FA5C700DB6CCE /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E4E10B101C6FA5D200DB6CCE /* YelpAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		E4E10B121C6FB02F00DB6CCE /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
+		E4E10B161C70449F00DB6CCE /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		E4E10B181C7046F600DB6CCE /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		E4E10B1A1C710FE900DB6CCE /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 			children = (
 				E4E10B0A1C6FA58A00DB6CCE /* Business.swift */,
 				E4E10B0C1C6FA5A600DB6CCE /* BusinessLocation.swift */,
+				E4E10B1A1C710FE900DB6CCE /* Filters.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				22AAAA9B1AEA1EC300A544AF /* BusinessesViewController.swift */,
+				E4E10B161C70449F00DB6CCE /* FiltersViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E4E10B121C6FB02F00DB6CCE /* BusinessTableViewCell.swift */,
+				E4E10B181C7046F600DB6CCE /* FilterTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -337,12 +346,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E10B191C7046F600DB6CCE /* FilterTableViewCell.swift in Sources */,
+				E4E10B1B1C710FE900DB6CCE /* Filters.swift in Sources */,
 				22AAAA9C1AEA1EC300A544AF /* BusinessesViewController.swift in Sources */,
 				E4E10B0F1C6FA5C700DB6CCE /* HTTPClient.swift in Sources */,
 				E4E10B111C6FA5D200DB6CCE /* YelpAPI.swift in Sources */,
 				E4E10B131C6FB02F00DB6CCE /* BusinessTableViewCell.swift in Sources */,
 				E4E10B0B1C6FA58A00DB6CCE /* Business.swift in Sources */,
 				E4E10B0D1C6FA5A600DB6CCE /* BusinessLocation.swift in Sources */,
+				E4E10B171C70449F00DB6CCE /* FiltersViewController.swift in Sources */,
 				222D8A5B19CCF9F900D2DB53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

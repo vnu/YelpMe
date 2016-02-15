@@ -38,17 +38,33 @@ class BusinessesViewController: UIViewController {
 
     }
 
-    func searchBusinesses(searchText: String, categories: [String] = []){
+    func searchBusinesses(searchText: String = "Restaurants", categories: [String]? = []){
         YelpAPI.sharedInstance.searchWithTerm(searchText, sort: .Distance, categories: categories, deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             self.searchTableView.reloadData()
         }
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+}
+
+extension BusinessesViewController:FiltersViewControllerDelegate{
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let navigationController = segue.destinationViewController as! UINavigationController
+        let filtersViewController = navigationController.topViewController as! FiltersViewController
+        filtersViewController.delegate = self
+    }
+    
+    func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : AnyObject]) {
+        let categories = filters["Categories"] as? [String]
+        searchBusinesses(categories: categories)
+    }
+    
 }
 
 extension BusinessesViewController:UISearchBarDelegate{
