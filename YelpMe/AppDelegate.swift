@@ -16,7 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        redNavBar()
         return true
+    }
+    
+    func redNavBar(){
+        let yelpColor = UIColor(red: 196.0/255, green: 18.0/255, blue: 0.0/255, alpha: 1.0)
+        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().barTintColor = yelpColor
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().barTintColor = yelpColor
     }
 
     func applicationWillResignActive(application: UIApplication) {

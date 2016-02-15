@@ -20,13 +20,11 @@
         isOnline = false
     }
     
+    func searchWithTerm(term: String, completion: ([Business]!, NSError!) -> Void) {
+        httpClient.searchWithTerm(term, completion: completion)
+    }
     
-    
-        func searchWithTerm(term: String, completion: ([Business]!, NSError!) -> Void) {
-            httpClient.searchWithTerm(term, completion: completion)
-        }
-    
-        func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, deals: Bool?, completion: ([Business]!, NSError!) -> Void) -> Void {
-            httpClient.searchWithTerm(term, sort: sort, categories: categories, deals: deals, completion: completion)
-        }
+    func searchWithTerm(term: String, sort: String?, categories: [String]?, deals: Bool?, distance: String?, completion: ([Business]!, NSError!) -> Void) -> Void {
+        httpClient.searchWithTerm(term, sort: sort, categories: categories, deals: deals, distance: distance, completion: completion)
+    }
  }
