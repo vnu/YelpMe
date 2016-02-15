@@ -221,11 +221,11 @@
             </objects>
             <point key="canvasLocation" x="1788" y="358"/>
         </scene>
-        <!--Item-->
+        <!-- -->
         <scene sceneID="qYG-gg-1sn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2tZ-kV-hqD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1Xh-qp-LhE"/>
+                    <tabBarItem key="tabBarItem" title=" " id="1Xh-qp-LhE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="adR-Fg-pXf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
